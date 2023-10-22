@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  grafana:
+    image: grafana/grafana:10.1.5
+    ports:
+      - 3000:3000
+    restart: unless-stopped
+    volumes:
+      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+      - grafana-data:/var/lib/grafana
+
+volumes:
+  prometheus-data:
+
+  grafana-data:
+    driver: local
