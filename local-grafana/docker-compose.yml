@@ -9,6 +9,9 @@ services:
     volumes:
       - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
       - grafana-data:/var/lib/grafana
+      - ./configs:/opt/configs
+    environment:
+      - GF_PATHS_CONFIG=/opt/configs/custom.ini
 
 volumes:
   prometheus-data:
