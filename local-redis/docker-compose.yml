@@ -7,7 +7,7 @@ services:
       - '6379:6379'
     command: redis-server --save 20 1 --loglevel warning --requirepass local-redis-auth
     volumes: 
-      - cache:/data
+      - redis-data:/data
 volumes:
-  redis:
+  redis-data:
     driver: local
